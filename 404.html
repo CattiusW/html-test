@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        // 1. Get the path (e.g., "/10") and remove the leading slash
+        const rawPath = window.location.pathname.substring(1);
+        
+        // 2. Try to convert it to a number
+        const pathNumber = Number(rawPath);
+
+        // 3. Logic check
+        // If the path is empty (just the domain) or not a valid number
+        if (rawPath === "" || isNaN(pathNumber)) {
+            window.location.href = "/0";
+        } else {
+            // If it is a number, add 1 and redirect
+            window.location.href = "/" + (pathNumber + 1);
+        }
+    </script>
+</head>
+<body>
+    <p>Wait...</p>
+</body>
+</html>
